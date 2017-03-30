@@ -12,6 +12,7 @@ public class ModalWindow extends JFrame {
 	        bCount, bClear;
 	JLabel result, calcResult;
 	JTextField calcField;
+	int i, k;
 	
 	EventHandler handler = new EventHandler();
 	
@@ -110,6 +111,7 @@ public class ModalWindow extends JFrame {
 			add(calcField);
 			calcField.setEditable(false);
 			calcField.setBackground(Color.white);
+			calcField.set;
 			
 			calcResult = new JLabel("");
 			calcResult.setBounds(50, 320, 200, 40);
@@ -120,10 +122,76 @@ public class ModalWindow extends JFrame {
 
 		public void actionPerformed(ActionEvent e) {
 			
+			if (e.getSource() == bNumber0) {
+				i = 0;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
 			if (e.getSource() == bNumber1) {
-				
-			}			
-			
+				i = 1;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber2) {
+				i = 2;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber3) {
+				i = 3;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber4) {
+				i = 4;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber5) {
+				i = 5;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber6) {
+				i = 6;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber7) {
+				i = 7;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber8) {
+				i = 8;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+			if (e.getSource() == bNumber9) {
+				i = 9;
+				String a = Integer.toString(i);
+				calcField.setText(a);
+			}	
+
+			if (e.getSource() == bCount) {
+				//i = ;
+			}	
+			if (e.getSource() == bClear) {
+				calcField.setText(null);
+			}	
+			/*if (e.getSource() == bPlus) {
+				i = 1;
+			}	
+			if (e.getSource() == bMinus) {
+				i = 1;
+			}	
+			if (e.getSource() == bMultiply) {
+				i = 1;
+			}	
+			if (e.getSource() == bDivide) {
+				i = 1;
+			}	*/
+
 		}
 		
 	}
