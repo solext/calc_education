@@ -15,6 +15,7 @@ public class Main {
 		modalWindow.setSize(500, 500);
 		modalWindow.setResizable(false);
 		modalWindow.setLocationRelativeTo(null);
+		modalWindow.setAlwaysOnTop(false);
 
 	}
 }
