@@ -12,7 +12,7 @@ public class Main {
 		modalWindow.setVisible(true);
 		modalWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		modalWindow.setBackground(Color.black);
-		modalWindow.setSize(270, 400);
+		modalWindow.setSize(270, 350);
 		modalWindow.setResizable(false);
 		modalWindow.setLocationRelativeTo(null);
 

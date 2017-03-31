@@ -10,9 +10,9 @@ public class ModalWindow extends JFrame {
 	        bNumber6, bNumber7, bNumber8, bNumber9, bNumber0,
 	        bPlus, bMinus, bMultiply, bDivide,
 	        bCount, bClear;
-	JLabel result, calcResult;
 	JTextField calcField;
-	int i, k;
+	int firstValue, secondValue;
+	String operation;
 	
 	EventHandler handler = new EventHandler();
 	
@@ -101,21 +101,13 @@ public class ModalWindow extends JFrame {
 			bDivide.setBounds(200, 255, 60, 60);
 			add(bDivide);
 			bDivide.addActionListener(handler);
-
-			result = new JLabel("Результат:");
-			result.setBounds(5, 320, 100, 40);
-			add(result);
 			
 			calcField = new JTextField(40);
 			calcField.setBounds(5, 5, 255, 40);
 			add(calcField);
 			calcField.setEditable(false);
 			calcField.setBackground(Color.white);
-			calcField.set;
-			
-			calcResult = new JLabel("");
-			calcResult.setBounds(50, 320, 200, 40);
-			add(calcResult);
+
  	}
 	
 	public class EventHandler implements ActionListener {
@@ -123,74 +115,76 @@ public class ModalWindow extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			
 			if (e.getSource() == bNumber0) {
-				i = 0;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"0");
 			}	
 			if (e.getSource() == bNumber1) {
-				i = 1;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"1");
 			}	
 			if (e.getSource() == bNumber2) {
-				i = 2;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"2");
 			}	
 			if (e.getSource() == bNumber3) {
-				i = 3;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"3");
 			}	
 			if (e.getSource() == bNumber4) {
-				i = 4;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"4");
 			}	
 			if (e.getSource() == bNumber5) {
-				i = 5;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"5");
 			}	
 			if (e.getSource() == bNumber6) {
-				i = 6;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"6");
 			}	
 			if (e.getSource() == bNumber7) {
-				i = 7;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"7");
 			}	
 			if (e.getSource() == bNumber8) {
-				i = 8;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"8");
 			}	
 			if (e.getSource() == bNumber9) {
-				i = 9;
-				String a = Integer.toString(i);
-				calcField.setText(a);
+				calcField.setText(calcField.getText()+"9");
 			}	
-
 			if (e.getSource() == bCount) {
-				//i = ;
+				secondValue = Integer.valueOf(calcField.getText());
+				if("+".equals(operation)) {
+					calcField.setText((firstValue+secondValue)+"");
+				}
+				if("-".equals(operation)) {
+					calcField.setText((firstValue-secondValue)+"");
+				}
+				if("*".equals(operation)) {
+					calcField.setText((firstValue*secondValue)+"");
+				}
+				if("/".equals(operation)) {
+					calcField.setText((firstValue/secondValue)+"");
+				}
+				firstValue = 0;
+				operation = "+";
+				//calcField.setText(null);
 			}	
 			if (e.getSource() == bClear) {
 				calcField.setText(null);
 			}	
-			/*if (e.getSource() == bPlus) {
-				i = 1;
+			if (e.getSource() == bPlus) {
+				firstValue = Integer.valueOf(calcField.getText());
+				calcField.setText("");
+				operation = "+";
 			}	
 			if (e.getSource() == bMinus) {
-				i = 1;
+				firstValue = Integer.valueOf(calcField.getText());
+				calcField.setText("");
+				operation = "-";
 			}	
 			if (e.getSource() == bMultiply) {
-				i = 1;
+				firstValue = Integer.valueOf(calcField.getText());
+				calcField.setText("");
+				operation = "*";
 			}	
 			if (e.getSource() == bDivide) {
-				i = 1;
-			}	*/
+				firstValue = Integer.valueOf(calcField.getText());
+				calcField.setText("");
+				operation = "/";
+			}	
 
 		}
 		
